@@ -1,1 +1,1 @@
-# Spectrogram-and-mfcc
+# Spectrograms and MFCC
