@@ -20,8 +20,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 x_train = []
 data1 = pd.read_csv("csv/spectrotraindev.csv", header=None)
-y_train = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
-data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
+y_train = data1.iloc[:, 0].to_numpy() 
+data1 = data1.iloc[: , 1:] 
 for index, row in data1.iterrows(): 
   row = row.to_numpy()
   row = row.reshape([100,100,3])
@@ -30,8 +30,8 @@ x_train = np.array(x_train, dtype=np.float32)
 
 x_dev = []
 data1 = pd.read_csv("csv/spectrodev.csv", header=None)
-y_dev = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
-data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
+y_dev = data1.iloc[:, 0].to_numpy() 
+data1 = data1.iloc[: , 1:] 
 for index, row in data1.iterrows(): 
   row = row.to_numpy()
   row = row.reshape([100,100,3])
@@ -40,8 +40,8 @@ x_dev = np.array(x_dev, dtype=np.float32)
 
 x_eval = []
 data1 = pd.read_csv("csv/spectroeval.csv", header=None)
-y_eval = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
-data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
+y_eval = data1.iloc[:, 0].to_numpy() 
+data1 = data1.iloc[: , 1:] 
 for index, row in data1.iterrows(): 
   row = row.to_numpy()
   row = row.reshape([100,100,3])
