@@ -99,10 +99,6 @@ def modelo():
   out = tf.keras.layers.Dense(1, activation='sigmoid')(dn1)
   return input_layer, out
 
-trainaccu=[]
-devaccu=[]
-evalaccu=[]
-eers=[]
 for x in range(10):
   #----------------------------------------TRAIN----------------------------------------
   input_layer, out = modelo2()
@@ -114,15 +110,11 @@ for x in range(10):
   #----------------------------------------EVALUATION----------------------------------------
   print("\nEvaluacion "+ str(x+1)+":")
   results = model.evaluate(x_eval, y_eval, verbose = 1)
-  trainaccu.append(history.history['accuracy'][59])
-  devaccu.append(history.history['val_accuracy'][59])
-  evalaccu.append(results[1])
   #----------------------------------------PREDICT----------------------------------------
   prediction = model.predict(x_eval)
   predics = prediction.reshape(13306,)
   #----------------------------------------EER----------------------------------------
   eerpercent=calculate_eer(y_eval, predics)
-  eers.append(eerpercent)
   print('\n% EER:'+str(eerpercent))
   #----------------------------------------MATRIX----------------------------------------
   pre = np.rint(prediction)
