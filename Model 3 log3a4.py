@@ -24,7 +24,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 
 x_train = []
-data1 = pd.read_csv("csv/spectraindevlog3a4.csv", header=None)
+data1 = pd.read_csv("/csv/spectraindevlog3a4.csv", header=None)
 y_train = data1.iloc[:, 0].to_numpy()
 data1 = data1.iloc[: , 1:] 
 for index, row in data1.iterrows(): 
@@ -34,7 +34,7 @@ for index, row in data1.iterrows():
 x_train = np.array(x_train, dtype=np.float32)
 
 x_dev = []
-data1 = pd.read_csv("csv/specdevlog3a4.csv", header=None)
+data1 = pd.read_csv("/csv/specdevlog3a4.csv", header=None)
 y_dev = data1.iloc[:, 0].to_numpy() 
 data1 = data1.iloc[: , 1:] 
 for index, row in data1.iterrows(): 
@@ -44,7 +44,7 @@ for index, row in data1.iterrows():
 x_dev = np.array(x_dev, dtype=np.float32)
 
 x_eval = []
-data1 = pd.read_csv("csv/specevallog3a4.csv", header=None)
+data1 = pd.read_csv("/csv/specevallog3a4.csv", header=None)
 y_eval = data1.iloc[:, 0].to_numpy() 
 data1 = data1.iloc[: , 1:] 
 for index, row in data1.iterrows(): 
@@ -124,7 +124,7 @@ for x in range(10):
   model.compile(optimizer='Adam', loss='binary_crossentropy', metrics=['accuracy'])
   print("\nEntrenamiento "+ str(x+1)+":")
   history = model.fit(x_train, y_train , validation_data=(x_dev, y_dev), batch_size=10, epochs = 10)
-  model.save('Model3-'+str(x+1)+'.h5')
+  model.save('/Model3-'+str(x+1)+'.h5')
   #----------------------------------------EVALUATION----------------------------------------
   print("\nEvaluacion "+ str(x+1)+":")
   results = model.evaluate(x_eval, y_eval, verbose = 1)
