@@ -19,7 +19,7 @@ from sklearn.metrics import make_scorer, roc_curve
 from sklearn.metrics import classification_report, confusion_matrix
 
 x_train = []
-data1 = pd.read_csv("path/spectrotraindev.csv", header=None)
+data1 = pd.read_csv("csv/spectrotraindev.csv", header=None)
 y_train = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
 data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
 for index, row in data1.iterrows(): 
@@ -29,7 +29,7 @@ for index, row in data1.iterrows():
 x_train = np.array(x_train, dtype=np.float32)
 
 x_dev = []
-data1 = pd.read_csv("path/spectrodev.csv", header=None)
+data1 = pd.read_csv("csv/spectrodev.csv", header=None)
 y_dev = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
 data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
 for index, row in data1.iterrows(): 
@@ -39,7 +39,7 @@ for index, row in data1.iterrows():
 x_dev = np.array(x_dev, dtype=np.float32)
 
 x_eval = []
-data1 = pd.read_csv("path/spectroeval.csv", header=None)
+data1 = pd.read_csv("csv/spectroeval.csv", header=None)
 y_eval = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
 data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
 for index, row in data1.iterrows(): 
@@ -112,7 +112,7 @@ for x in range(10):
   model.compile(optimizer='RMSprop', loss='binary_crossentropy', metrics=['accuracy']) #RMSprop
   print("\nEntrenamiento "+ str(x+1)+":")
   history = model.fit(x_train, y_train , validation_data=(x_dev, y_dev), batch_size=15, epochs = 5)
-  model.save('/content/drive/MyDrive/2017/models/spectro/AR1baseviejo34a-'+str(x+1)+'.h5')
+  model.save('Model1-'+str(x+1)+'.h5')
   #----------------------------------------EVALUATION----------------------------------------
   print("\nEvaluacion "+ str(x+1)+":")
   results = model.evaluate(x_eval, y_eval, verbose = 1)
