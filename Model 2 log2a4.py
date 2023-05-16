@@ -22,9 +22,6 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import make_scorer, roc_curve
 from sklearn.metrics import classification_report, confusion_matrix
 
-dataclase1 = pd.read_excel("path/traindev2017.xlsx", header=None ,names=["Nombre", "Clase"])
-dataclase2 = pd.read_excel("path/dev2017.xlsx", header=None ,names=["Nombre", "Clase"])
-dataclase3 = pd.read_excel("path/eval2017.xlsx", header=None ,names=["Nombre", "Clase"])
 
 x_train = []
 data1 = pd.read_csv("path/spectraindevlog2a4.csv", header=None)
