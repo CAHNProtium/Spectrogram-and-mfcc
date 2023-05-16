@@ -104,7 +104,7 @@ for x in range(10):
   eerpercent=calculate_eer(y_eval, predics)
   eers.append(eerpercent)
   print('\n% EER:'+str(eerpercent))
-  #----------------------------------------EER----------------------------------------
+  #----------------------------------------MATRIX----------------------------------------
   pre = np.rint(prediction)
   pre = pre.astype(int)
   pre = pre.flatten()
