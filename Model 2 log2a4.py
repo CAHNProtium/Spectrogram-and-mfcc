@@ -1,9 +1,9 @@
 #Autor: Carlos Alberto Hernández Nava
 #ASVspoof2017 spectrograms Log 2 a Log 4
 
-dataclase1 = pd.read_excel("path", header=None ,names=["Nombre", "Clase"])
-dataclase2 = pd.read_excel("path", header=None ,names=["Nombre", "Clase"])
-dataclase3 = pd.read_excel("path", header=None ,names=["Nombre", "Clase"])
+dataclase1 = pd.read_excel("path/traindev2017.xlsx", header=None ,names=["Nombre", "Clase"])
+dataclase2 = pd.read_excel("path/dev2017.xlsx", header=None ,names=["Nombre", "Clase"])
+dataclase3 = pd.read_excel("path/eval2017.xlsx", header=None ,names=["Nombre", "Clase"])
 
 import cv2, sys, os, gc
 import librosa
