@@ -113,10 +113,7 @@ def calculate_eer(y_true, y_score):
   plt.show()
   return eerpercent
 
-trainaccu=[]
-devaccu=[]
-evalaccu=[]
-eers=[]
+
 for x in range(1):
   #----------------------------------------TRAIN----------------------------------------
   input_layer, out = modelo()
@@ -128,15 +125,11 @@ for x in range(1):
   #----------------------------------------EVALUATION----------------------------------------
   print("\nEvaluacion "+ str(x+1)+":")
   results = model.evaluate(x_eval, y_eval, verbose = 1)
-  trainaccu.append(history.history['accuracy'][9])
-  devaccu.append(history.history['val_accuracy'][9])
-  evalaccu.append(results[1])
   #----------------------------------------PREDICT----------------------------------------
   prediction = model.predict(x_eval)
   predics = prediction.reshape(13306,)
   #----------------------------------------EER----------------------------------------
   eerpercent=calculate_eer(y_eval, predics)
-  eers.append(eerpercent)
   print('\n% EER:'+str(eerpercent))
   #----------------------------------------MATRIX----------------------------------------
   pre = np.rint(prediction)
