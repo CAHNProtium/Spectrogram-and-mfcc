@@ -18,9 +18,35 @@ from scipy.special import expit as sigmoid
 from sklearn.metrics import make_scorer, roc_curve
 from sklearn.metrics import classification_report, confusion_matrix
 
-dataclase1 = pd.read_excel("path/traindev2017.xlsx", header=None ,names=["Nombre", "Clase"])
-dataclase2 = pd.read_excel("path/dev2017.xlsx", header=None ,names=["Nombre", "Clase"])
-dataclase3 = pd.read_excel("path/eval2017.xlsx", header=None ,names=["Nombre", "Clase"])
+x_train = []
+data1 = pd.read_csv("path/spectrotraindev.csv", header=None)
+y_train = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
+data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
+for index, row in data1.iterrows(): 
+  row = row.to_numpy()
+  row = row.reshape([100,100,3])
+  x_train.append(row)
+x_train = np.array(x_train, dtype=np.float32)
+
+x_dev = []
+data1 = pd.read_csv("path/spectrodev.csv", header=None)
+y_dev = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
+data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
+for index, row in data1.iterrows(): 
+  row = row.to_numpy()
+  row = row.reshape([100,100,3])
+  x_dev.append(row)
+x_dev = np.array(x_dev, dtype=np.float32)
+
+x_eval = []
+data1 = pd.read_csv("path/spectroeval.csv", header=None)
+y_eval = data1.iloc[:, 0].to_numpy() #extraer labels convertir a numpy
+data1 = data1.iloc[: , 1:] #extraer las columnas para las imagenes
+for index, row in data1.iterrows(): 
+  row = row.to_numpy()
+  row = row.reshape([100,100,3])
+  x_eval.append(row)
+x_eval = np.array(x_eval, dtype=np.float32)
 
 def modelo(x):
   
