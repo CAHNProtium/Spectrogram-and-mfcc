@@ -115,6 +115,7 @@ for x in range(5):
   model.save('/Model5-'+str(x+1)+'.h5')
   #----------------------------------------EVALUATION----------------------------------------
   print("\nEvaluacion "+ str(x+1)+":")
+  results = model.evaluate(x_eval, y_eval, verbose = 1)
   #----------------------------------------PREDICT----------------------------------------
   prediction = model.predict(x_eval)
   predics = prediction.reshape(13306,)
