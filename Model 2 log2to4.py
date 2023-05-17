@@ -1,5 +1,5 @@
 #Autor: Carlos Alberto Hernández Nava
-#ASVspoof2017 spectrograms Log 2 a Log 4
+#ASVspoof2017 spectrograms Log 2 to Log 4
 
 import cv2, sys, os, gc
 import librosa
