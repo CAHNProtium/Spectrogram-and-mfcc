@@ -1,5 +1,5 @@
 #Autor: Carlos Alberto Hernández Nava
-#ASVspoof2017 spectrograms 100 x 100 color
+#ASVspoof2017 MFCC extractor an convert to csv
 
 import cv2, os, sys, csv
 import numpy as np
