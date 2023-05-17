@@ -24,7 +24,7 @@ from sklearn.metrics import make_scorer, roc_curve
 from sklearn.metrics import classification_report, confusion_matrix
 
 x_train = []
-data1 = pd.read_csv("/csv/3smfccmatrixtraindev.csv", header=None)
+data1 = pd.read_csv("/csv/mfccmatrixtraindev.csv", header=None)
 y_train = data1.iloc[:, 0].to_numpy()
 data1 = data1.iloc[: , 1:]
 for index, row in data1.iterrows(): 
@@ -34,7 +34,7 @@ for index, row in data1.iterrows():
 x_train = np.array(x_train, dtype=np.float32)
 
 x_dev = []
-data1 = pd.read_csv("/csv/3smfccmatrixdev.csv", header=None)
+data1 = pd.read_csv("/csv/mfccmatrixdev.csv", header=None)
 y_dev = data1.iloc[:, 0].to_numpy()
 data1 = data1.iloc[: , 1:]
 for index, row in data1.iterrows(): 
@@ -44,7 +44,7 @@ for index, row in data1.iterrows():
 x_dev = np.array(x_dev, dtype=np.float32)
 
 x_eval = []
-data1 = pd.read_csv("/csv/3smfccmatrixeval.csv", header=None)
+data1 = pd.read_csv("/csv/mfccmatrixeval.csv", header=None)
 y_eval = data1.iloc[:, 0].to_numpy()
 data1 = data1.iloc[: , 1:]
 for index, row in data1.iterrows(): 
