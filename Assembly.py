@@ -82,3 +82,21 @@ print("\n%s: %.2f%%" % (model.metrics_names[1], results[1]*100))
 print (model.predict(training_data).round())
 
 model.save('/Finalmodel.h5')
+
+#show results
+predics=model.predict(x_eval1)
+predicsfinal = predics.reshape(13306,)
+eerpercent=calculate_eer(y_eval1, predicsfinal)
+print('\n% EER:'+str(eerpercent))
+
+#confusion matrix
+pre = np.rint(predicsfinal)
+pre = pre.astype(int)
+pre = pre.flatten()
+cm = confusion_matrix(y_eval, pre)
+plt.title("Confusion Matrix 2017", fontsize =15)
+sns.heatmap(cm, annot=True, linewidths=.5, cmap="Blues", fmt=".5g")
+plt.show()
+print(str(cm[0][0] + cm[1][1]) + ' de 13306')
+accu=((cm[0][0] + cm[1][1])/13306)
+print("accuracy: " + str(accu*100))
