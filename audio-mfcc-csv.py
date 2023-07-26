@@ -11,9 +11,9 @@ import scipy.io.wavfile as wav
 from sklearn import preprocessing
 import seaborn as sns
 
-pathwav1="/ASVspoof2017/traindev/"
-pathwav2="/ASVspoof2017/dev/"
-pathwav3="/ASVspoof2017/eval/"
+pathwav1="/ASVspoof2017-V2/traindev/"
+pathwav2="/ASVspoof2017-V2/dev/"
+pathwav3="/ASVspoof2017-V2/eval/"
 
 dataclase1 = pd.read_excel("/traindev2017.xlsx", header=None ,names=["Nombre", "Clase"])
 dataclase2 = pd.read_excel("/dev2017.xlsx", header=None ,names=["Nombre", "Clase"])
