@@ -14,9 +14,9 @@ from os import remove
 import librosa
 
 #paths y vars
-pathwav1="/ASVspoof2017/traindev/"
-pathwav2="/ASVspoof2017/dev/"
-pathwav3="/ASVspoof2017/eval/"
+pathwav1="/ASVspoof2017-V2/traindev/"
+pathwav2="/ASVspoof2017-V2/dev/"
+pathwav3="/ASVspoof2017-V2/eval/"
 
 path1="/log2a4/traindev/"
 path2="/log2a4/dev/"
